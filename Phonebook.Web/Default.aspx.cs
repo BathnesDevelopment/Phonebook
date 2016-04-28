@@ -32,6 +32,7 @@ public partial class _Default : System.Web.UI.Page
 
         var data = new List<string[]>();
         data.Add(new string[] { "Dave", "IT", "7356" });
+        data.Add(new string[] { "Ian", "People Services", "6899" });
         return data;
         //var serializer = new JavaScriptSerializer();
         //return serializer.Serialize(data);
