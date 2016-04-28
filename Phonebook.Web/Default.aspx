@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,7 +16,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/internal.css" rel="stylesheet">
     <link href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet">
-    
 </head>
 <body>
     <div class="container">
@@ -54,26 +52,7 @@
     <!-- End optional Jumbotron-->
     <div class="container">
         <!-- Page content goes in here -->
-        
-        <table class="table" id="tablePhonebook">
-            <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Department</td>
-                    <td>Phone number</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Dave</td>
-                    <td>IT</td>
-                    <td>7356</td>
-                </tr>
-            </tbody>
-        </table>
-
-
-
+        <table class="table" id="tablePhonebook"></table>
         <!-- End page content -->
         <footer>
             <div class="row">
@@ -90,7 +69,24 @@
     <script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
-            $('#tablePhonebook').DataTable();
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/GetDirectory",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('#tablePhonebook').DataTable(
+                        {
+                            data: msg.d,
+                            columns: [
+                                { title: "Name" },
+                                { title: "Department" },
+                                { title: "Phone" }
+                            ]
+                        });
+                }
+            });
         });
     </script>
 </body>
