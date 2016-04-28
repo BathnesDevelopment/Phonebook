@@ -176,7 +176,7 @@
                             data: msg.d,
                             "fnInitComplete": function (oSettings, json) {
 
-                            },
+                            }, // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
                             columns: [
                                 {
                                     title: "Name",
@@ -184,20 +184,26 @@
                                         return '<div id=piDiv' + meta.row + '>' + data + '</a>'
                                     }
                                 },
+                                { title: "Surname" },
+                                { title: "Given name" },
+                                { title: "Job title" },
+                                { title: "Manager" },
                                 { title: "Department" },
-                                { title: "Phone" },
+                                { title: "Location" },
+                                { title: "Telephone" },
+                                { title: "Mobile" },
                                 { title: "Email" }
                             ]
                         });
 
                         setTimeout(function () {
                             $.each(msg.d, function (ind, data) {
-                                nameCtrl.GetStatus(data[3], 'piDiv' + ind);
+                                nameCtrl.GetStatus(data[9], 'piDiv' + ind);
 
                                 var myDiv = document.getElementById('piDiv' + ind);
                                 if (myDiv) {
                                     myDiv.onmouseover = function () {
-                                        nameCtrl.ShowOOUI(data[3], 0, 10, 10);
+                                        nameCtrl.ShowOOUI(data[9], 0, 10, 10);
                                     }
                                     myDiv.onmouseout = function () {
                                         nameCtrl.HideOOUI();

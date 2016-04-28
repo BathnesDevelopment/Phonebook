@@ -22,11 +22,9 @@ public partial class _Default : System.Web.UI.Page
     {
         // SQL Connection code pilfered from MSDN https://msdn.microsoft.com/en-us/library/fksx3b4f.aspx
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
-        SqlCommand cmd = new SqlCommand();
+        SqlCommand cmd = new SqlCommand("sp_GetPhoneBookData", sqlConnection);
         SqlDataReader reader;
-        cmd.CommandText = "select displayName, sn, givenName, IsNull(telephoneNumber,''), mobile, IsNull(mail, ''), title, physicalDeliveryOfficeName, IsNull(department,'') from phonebook";
-        cmd.CommandType = CommandType.Text;
-        cmd.Connection = sqlConnection;
+        cmd.CommandType = CommandType.StoredProcedure;
         sqlConnection.Open();
         reader = cmd.ExecuteReader();
 
@@ -35,7 +33,8 @@ public partial class _Default : System.Web.UI.Page
         {
             while (reader.Read())
             {
-                data.Add(new string[] { reader.GetString(0), reader.GetString(8), reader.GetString(3), reader.GetString(5) });
+                // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
+                data.Add(new string[] { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9) });
             }
         }
         sqlConnection.Close();
