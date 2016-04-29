@@ -33,9 +33,25 @@
         }
 
         .status-inacall {
-            border-left: 3px solid red;
+            border-left: 3px solid #D00E0D;
             padding-left: 5px;
         }
+
+        .status-busy {
+            border-left: 3px solid #D00E0D;
+            padding-left: 5px;
+        }
+                
+        .status-donotdisturb {
+            border-left: 3px solid #C72D25;
+            padding-left: 5px;
+        }
+
+        .status-outofoffice {
+            border-left: 3px solid #B6CFD8;
+            padding-left: 5px;
+        }
+
     </style>
 </head>
 <body>
