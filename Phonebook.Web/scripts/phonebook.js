@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
 
-
     ///////////////////////////////////////////////////
     // Initialize the ActiveX object that allows for 
     // Lync/Skype integration.

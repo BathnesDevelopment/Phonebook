@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,14 +45,36 @@
     <!-- Option Jumbotron - remove if not wanted. -->
     <div class="jumbotron">
         <div class="container">
-            <h1>Phonebook</h1>
-            <p>B&NES Council phonebook</p>
+            <h1>#Phonebook</h1>
+            <p>B&amp;NES Council phonebook</p>
+            <p>
+                <a class="btn btn-primary" href="#">User Guide</a>
+                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#videoModal">Movie</a>
+            </p>
         </div>
     </div>
     <!-- End optional Jumbotron-->
     <div class="container">
         <!-- Page content goes in here -->
         <table class="table" id="tablePhonebook"></table>
+
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" aria-hidden="true" type="button" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Surface Book</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>An all-round terrific device.</p>
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XVfOe5mFbAE" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- End page content -->
         <footer>
             <div class="row">
