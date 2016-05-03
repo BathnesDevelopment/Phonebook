@@ -41,7 +41,9 @@
         nameCtrl.OnStatusChange = function (userName, status, id) {
             var div = document.getElementById(id);
             if (div) {
-                div.classList.remove("status-available", "status-offline", "status-away", "status-inacall", "status-outofoffice", "status-busy", "status-donotdisturb");
+                div.classList.remove("status", "status-available", "status-offline", "status-away", "status-inacall", "status-outofoffice", "status-busy", "status-donotdisturb");
+
+                document.getElementById(id).classList.add('status');
                 switch (status) {
                     case 0:
                         //available
@@ -94,16 +96,47 @@
         dataType: "json",
         success: function (msg) {
 
+            var attachToSkype = function () {
+                var divs = $('div[id^="piDiv"]');
+                $.each(divs, function (ind, div) {
+                    if (nameCtrl && !div.skypeAttached) {
+
+                        // The div id will look somethign like piDiv1123
+                        var index = parseInt(div.id.substring(5));
+
+                        // get the data row.
+                        var row = msg.d[index]
+
+                        // data[7] is the email address - this is passed into the nameCtrl object to watch status 
+                        // changes for that email address.
+                        var email = row[7];
+
+                        nameCtrl.GetStatus(email, div.id);
+                        
+                        if (div) {
+                            div.onmouseover = function () {
+                                nameCtrl.ShowOOUI(email, 0, 10, 10);
+                            }
+                            div.onmouseout = function () {
+                                nameCtrl.HideOOUI();
+                            }
+                        }
+
+                        // Attach a flag on the DIV to show we've done it.
+                        div.skypeAttached = true;
+                    }
+                });
+            };
+
+
             $('#tablePhonebook')
-                .on('dt.init', function () {
-                    console.log('Table initialisation complete: ' + new Date().getTime());
+                .on('init.dt', function () {
+                    attachToSkype();
                 })
                 .DataTable(
                 {
                     data: msg.d,
-                    "fnInitComplete": function (oSettings, json) {
-                        console.log('Table initialisation complete: ' + new Date().getTime());
-                    }, // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
+                    // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
                     columns: [
                         {
                             title: "Name",
@@ -119,33 +152,14 @@
                         { title: "Location" },
                         { title: "Telephone" },
                         { title: "Mobile" },
-                        { title: "Email" }
+                        { title: "Email", "visible": false }
                     ]
                 });
 
             $('#tablePhonebook').on('draw.dt', function () {
-                alert('Table redrawn');
+                attachToSkype();
             });
 
-            setTimeout(function () {
-                $.each(msg.d, function (ind, data) {
-                    if (nameCtrl) {
-                        // data[7] is the email address - this is passed into the nameCtrl object to watch status 
-                        // changes for that email address.
-                        var email = data[7];
-                        nameCtrl.GetStatus(email, 'piDiv' + ind);
-                        var myDiv = document.getElementById('piDiv' + ind);
-                        if (myDiv) {
-                            myDiv.onmouseover = function () {
-                                nameCtrl.ShowOOUI(email, 0, 10, 10);
-                            }
-                            myDiv.onmouseout = function () {
-                                nameCtrl.HideOOUI();
-                            }
-                        }
-                    }
-                });
-            }, 5000);
         }
     });
 });

@@ -6,37 +6,43 @@
         height: 100% !important;
     }
 
+
+.jumbotron {
+    /*background-image: url("../images/red-phone.jpg");*/
+    background-size: contain;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.status {
+    cursor: pointer;
+    padding-left: 7px;
+}
+
 .status-available {
     border-left: 3px solid #5DD255;
-    padding-left: 5px;
 }
 
 .status-offline {
     border-left: 3px solid #B6CFD8;
-    padding-left: 5px;
 }
 
 .status-away {
     border-left: 3px solid #FFD200;
-    padding-left: 5px;
 }
 
 .status-inacall {
     border-left: 3px solid #D00E0D;
-    padding-left: 5px;
 }
 
 .status-busy {
     border-left: 3px solid #D00E0D;
-    padding-left: 5px;
 }
 
 .status-donotdisturb {
     border-left: 3px solid #C72D25;
-    padding-left: 5px;
 }
 
 .status-outofoffice {
     border-left: 3px solid #B6CFD8;
-    padding-left: 5px;
 }
