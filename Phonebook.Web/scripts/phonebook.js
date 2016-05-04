@@ -40,7 +40,14 @@
         nameCtrl.OnStatusChange = function (userName, status, id) {
             var div = document.getElementById(id);
             if (div) {
-                div.classList.remove("status", "status-available", "status-offline", "status-away", "status-inacall", "status-outofoffice", "status-busy", "status-donotdisturb");
+                div.classList.remove("status");
+                div.classList.remove("status-available");
+                div.classList.remove("status-offline");
+                div.classList.remove("status-away");
+                div.classList.remove("status-inacall");
+                div.classList.remove("status-outofoffice");
+                div.classList.remove("status-busy");
+                div.classList.remove("status-donotdisturb");
 
                 document.getElementById(id).classList.add('status');
                 switch (status) {
@@ -82,7 +89,6 @@
         };
     }
 
-
     ///////////////////////////////////////////////////
     // GET the phonebook data from the WebMethod in 
     // the code behind (GetDirectory)
@@ -93,8 +99,10 @@
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
+        async: true,
         success: function (msg) {
 
+            $('.loading').hide();
             var attachToSkype = function () {
                 var divs = $('div[id^="piDiv"]');
                 $.each(divs, function (ind, div) {
@@ -134,6 +142,7 @@
                 })
                 .DataTable(
                 {
+                    processing: true,
                     data: msg.d,
                     // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
                     columns: [
@@ -158,7 +167,6 @@
             $('#tablePhonebook').on('draw.dt', function () {
                 attachToSkype();
             });
-
         }
     });
 });

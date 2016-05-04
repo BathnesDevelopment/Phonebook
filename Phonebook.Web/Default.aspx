@@ -51,13 +51,14 @@
                 <a class="btn btn-primary" href="#">User Guide</a>
                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#videoModal">Movie</a>
             </p>
+            <p class="loading">Loading</p>
         </div>
     </div>
     <!-- End optional Jumbotron-->
     <div class="container">
         <!-- Page content goes in here -->
-        <table class="table" id="tablePhonebook"></table>
-
+        
+            <table class="table" id="tablePhonebook"></table>
         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -68,7 +69,7 @@
                     <div class="modal-body">
                         <p>An all-round terrific device.</p>
                         <div>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XVfOe5mFbAE" frameborder="0" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XVfOe5mFbAE" frameborder="0"></iframe>
                         </div>
                     </div>
                 </div>

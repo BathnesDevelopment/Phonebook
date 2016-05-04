@@ -10,13 +10,13 @@
 .jumbotron {
     /*background-image: url("../images/red-phone.jpg");*/
     background-size: contain;
-    background-position:center;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
-.jumbotron .container h1::first-letter {
-    color: #00ADEF;
-}
+    .jumbotron .container h1::first-letter {
+        color: #00ADEF;
+    }
 
 .status {
     cursor: pointer;
@@ -49,4 +49,34 @@
 
 .status-outofoffice {
     border-left: 3px solid #B6CFD8;
+}
+
+/*
+    CSS Loading indicator
+*/
+
+.loading {
+    min-width: 300px;
+}
+
+.loading:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+    animation: ellipsis steps(4,end) 900ms infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
+}
+
+@keyframes ellipsis {
+    to {
+        width: 20px;
+    }
+}
+
+@-webkit-keyframes ellipsis {
+    to {
+        width: 20px;
+    }
 }
