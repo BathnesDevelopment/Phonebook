@@ -29,16 +29,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="http://intranet/">
                         <img src="/images/logo.svg" />
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav"></ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="http://intranet/dash-news">News</a></li>
+                        <li><a href="http://intranet/dash-flexible">Flexible working</a></li>
+                        <li><a href="http://intranet/dash-working">HR + Payroll</a></li>
+                        <li><a href="http://intranet/dash-procurement">Procurement + Finance</a></li>
+                        <li><a href="http://intranet/dash-it">IT</a></li>
+                        <li><a href="http://intranet/dash-social">Social</a></li>
+                        <li><a href="http://intranet/dash-getting-about">Getting About</a></li>
+                        <li><a href="http://intranet/dash-tools">Useful Tools</a></li>
+                        <li><a href="http://phonebook.bathnes.gov.uk">Phonebook</a></li>
+                    </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="mailto:IT_Helpdesk@bathnes.gov.uk?subject=Bit%20of%20an%20issue%20here%20people">Report Issue</a></li>
-                        <li><a href="mailto:dave_roweuk@yahoo.co.uk?subject=This%20is%20good%20good%20good&body=I%20am%20buying%20you%20a%20surface%20book">Compliments</a></li>
                     </ul>
                 </div>
             </div>
