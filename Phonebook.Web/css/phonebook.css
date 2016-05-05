@@ -6,6 +6,16 @@
         height: 100% !important;
     }
 
+tr.grouping {
+    text-transform: uppercase;
+    font-size: smaller;
+    text-align: right;
+    background-color: #F9F9F9;
+}
+
+tr.grouping td {
+    padding: 4px !important;
+}
 
 .jumbotron {
     /*background-image: url("../images/red-phone.jpg");*/

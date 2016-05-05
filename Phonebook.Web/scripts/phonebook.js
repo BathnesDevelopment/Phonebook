@@ -102,6 +102,11 @@
         async: true,
         success: function (msg) {
 
+            // Set a row ID
+            $.each(msg.d, function (i,x) {
+                x['DT_RowId'] = 'tr' + i;
+            });
+
             $('.loading').hide();
             var attachToSkype = function () {
                 var divs = $('div[id^="piDiv"]');
@@ -111,15 +116,11 @@
                         // The div id will look somethign like piDiv1123
                         var index = parseInt(div.id.substring(5));
 
-                        // get the data row.
-                        var row = msg.d[index]
-
                         // data[7] is the email address - this is passed into the nameCtrl object to watch status 
                         // changes for that email address.
-                        var email = row[7];
-
+                        var email = msg.d[index][7];
                         nameCtrl.GetStatus(email, div.id);
-                        
+
                         if (div) {
                             div.onmouseover = function () {
                                 nameCtrl.ShowOOUI(email, 0, 10, 10);
@@ -128,13 +129,11 @@
                                 nameCtrl.HideOOUI();
                             }
                         }
-
                         // Attach a flag on the DIV to show we've done it.
                         div.skypeAttached = true;
                     }
                 });
             };
-
 
             $('#tablePhonebook')
                 .on('init.dt', function () {
@@ -143,6 +142,10 @@
                 .DataTable(
                 {
                     processing: true,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'print'
+                    ],
                     data: msg.d,
                     // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
                     columns: [
@@ -155,13 +158,27 @@
                         //{ title: "Surname" },
                         //{ title: "Given name" },
                         { title: "Job title" },
-                        { title: "Manager" },
+                        { title: "Manager", visible: false },
                         { title: "Department" },
                         { title: "Location" },
                         { title: "Telephone" },
-                        { title: "Mobile" },
-                        { title: "Email", "visible": false }
-                    ]
+                        { title: "Mobile", visible: false },
+                        { title: "Email", visible: false }
+                    ],
+                    order: [[ 2, 'asc' ]],
+                    drawCallback: function (settings) {
+                        var api = this.api();
+                        var rows = api.rows({ page: 'current' }).nodes();
+                        var last = null;
+                        api.column(2, { page: 'current' }).data().each(function (group, i) {
+                            if (group != '' && last !== group) {
+                                $(rows).eq(i).before(
+                                    '<tr class="grouping"><td colspan="5">Manager: ' + group + '</td></tr>'
+                                );
+                                last = group;
+                            }
+                        });
+                    }
                 });
 
             $('#tablePhonebook').on('draw.dt', function () {

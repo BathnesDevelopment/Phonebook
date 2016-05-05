@@ -16,6 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/phonebook.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/t/bs/dt-1.10.11/datatables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -36,7 +37,8 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav"></ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="mailto:IT_Helpdesk@bathnes.gov.uk">Report Issue</a></li>
+                        <li><a href="mailto:IT_Helpdesk@bathnes.gov.uk?subject=Bit%20of%20an%20issue%20here%20people">Report Issue</a></li>
+                        <li><a href="mailto:dave_roweuk@yahoo.co.uk?subject=This%20is%20good%20good%20good&body=I%20am%20buying%20you%20a%20surface%20book">Compliments</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,25 +59,21 @@
     <!-- End optional Jumbotron-->
     <div class="container">
         <!-- Page content goes in here -->
-        
-            <table class="table" id="tablePhonebook"></table>
+        <table class="table" id="tablePhonebook"></table>
         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close" aria-hidden="true" type="button" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Surface Book</h4>
+                        <h4 class="modal-title">Video title</h4>
                     </div>
                     <div class="modal-body">
-                        <p>An all-round terrific device.</p>
-                        <div>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XVfOe5mFbAE" frameborder="0"></iframe>
-                        </div>
+                        <p>Put the video guide in here.</p>
+                        <div></div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- End page content -->
         <footer>
             <div class="row">
@@ -90,6 +88,9 @@
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/t/bs/dt-1.10.11/datatables.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js" type="text/javascript"></script>
     <script src="scripts/phonebook.js" type="text/javascript"></script>
 </body>
 </html>
