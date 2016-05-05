@@ -57,6 +57,7 @@
         <div class="container">
             <h1>#Phonebook</h1>
             <p>B&amp;NES Council phonebook</p>
+			<small>If your phone number is incorrect please contact the IT Helpdesk on 7252</small>
             <p>
                 <a class="btn btn-primary" href="#">User Guide</a>
                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#videoModal">Movie</a>
@@ -95,10 +96,12 @@
     </div>
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.0/jszip.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/t/bs/dt-1.10.11/datatables.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.bootstrap.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js" type="text/javascript"></script>
     <script src="scripts/phonebook.js" type="text/javascript"></script>
 </body>
 </html>

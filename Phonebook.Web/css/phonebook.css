@@ -28,6 +28,10 @@ tr.grouping td {
         color: #00ADEF;
     }
 
+.buttons {
+    padding-right: 5px !important;
+}
+
 .status {
     cursor: pointer;
     padding-left: 7px;

@@ -144,8 +144,20 @@
                     processing: true,
                     dom: 'Bfrtip',
                     buttons: [
-                        'print'
+                        {
+                            extend: 'print',
+                            text: 'Print',
+                            className: ''
+
+                        },
+                        {
+                            extend: 'excelHtml5',
+                            text: 'Export Excel',
+                            className: ''
+
+                        }
                     ],
+                    deferRender: true,
                     data: msg.d,
                     // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
                     columns: [
