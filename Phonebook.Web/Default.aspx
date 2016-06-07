@@ -68,7 +68,15 @@
     <!-- End optional Jumbotron-->
     <div class="container">
         <!-- Page content goes in here -->
-        <table class="table" id="tablePhonebook"></table>
+        <table class="table" id="tablePhonebook"><tfoot><tr>
+                            <!-- Matthew Steer added this on 6.6.16 -->
+                            <th rowspan="1" colspan="1"><input type="text"></th>
+                            <th rowspan="1" colspan="1"><input type="text"></th>
+                            <th rowspan="1" colspan="1"><input type="text"></th> 
+                            <th rowspan="1" colspan="1"><input type="text"></th>                           
+                            <th rowspan="1" colspan="1"><input type="text"></th>
+                            <th rowspan="1" colspan="1"><input type="text"></th>                            
+					</tr></tfoot></table>
         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

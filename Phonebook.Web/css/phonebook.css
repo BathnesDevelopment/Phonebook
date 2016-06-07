@@ -13,9 +13,9 @@ tr.grouping {
     background-color: #F9F9F9;
 }
 
-tr.grouping td {
-    padding: 4px !important;
-}
+    tr.grouping td {
+        padding: 4px !important;
+    }
 
 .jumbotron {
     /*background-image: url("../images/red-phone.jpg");*/
@@ -73,15 +73,15 @@ tr.grouping td {
     min-width: 300px;
 }
 
-.loading:after {
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: bottom;
-    -webkit-animation: ellipsis steps(4,end) 900ms infinite;
-    animation: ellipsis steps(4,end) 900ms infinite;
-    content: "\2026"; /* ascii code for the ellipsis character */
-    width: 0px;
-}
+    .loading:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+        animation: ellipsis steps(4,end) 900ms infinite;
+        content: "\2026"; /* ascii code for the ellipsis character */
+        width: 0px;
+    }
 
 @keyframes ellipsis {
     to {
@@ -93,4 +93,14 @@ tr.grouping td {
     to {
         width: 20px;
     }
+}
+
+/* Matthew Steer added this on: 6.6.16 */
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+::-ms-clear {
+    display: none;
 }
