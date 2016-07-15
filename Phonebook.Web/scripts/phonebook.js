@@ -177,15 +177,18 @@
                         { title: "Mobile", visible: true },
                         { title: "Email", visible: true }
                     ],
-                    order: [[ 2, 'asc' ]],
+                    //order: [[ 2, 'asc' ]],
+                    order: [[3, 'asc']],
                     drawCallback: function (settings) {
                         var api = this.api();
                         var rows = api.rows({ page: 'current' }).nodes();
                         var last = null;
-                        api.column(2, { page: 'current' }).data().each(function (group, i) {
+                        //api.column(2, { page: 'current' }).data().each(function (group, i) {
+                        api.column(3, { page: 'current' }).data().each(function (group, i) {
                             if (group != '' && last !== group) {
                                 $(rows).eq(i).before(
-                                    '<tr class="grouping"><td colspan="5">Manager: ' + group + '</td></tr>'
+                                    //'<tr class="grouping"><td colspan="5">Manager: ' + group + '</td></tr>'
+                                    '<tr class="grouping"><td colspan="5">Department: ' + group + '</td></tr>'
                                 );
                                 last = group;
                             }
