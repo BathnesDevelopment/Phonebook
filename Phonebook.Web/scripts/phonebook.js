@@ -150,12 +150,12 @@
                             className: ''
 
                         },
-                        {
-                            extend: 'excelHtml5',
-                            text: 'Export Excel',
-                            className: ''
+               //         {
+               //             extend: 'excelHtml5',
+               //             text: 'Export Excel',
+               //             className: ''
 
-                        }
+//                        }
                     ],
                     deferRender: true,
                     data: msg.d,
