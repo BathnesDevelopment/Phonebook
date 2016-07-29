@@ -11,7 +11,7 @@ tr.grouping {
     font-size: smaller;
     font-weight: bold;
     text-align: right;
-    /*background-color: #F9F9F9;*/
+    background-color: #fcfcfc;
 }
 
     tr.grouping td {
@@ -98,6 +98,7 @@ tr.grouping {
 
 /* Matthew Steer added this on: 6.6.16 */
 tfoot input {
+    font-size: 13px !important;
     width: 100%;
     padding: 3px;
     box-sizing: border-box;

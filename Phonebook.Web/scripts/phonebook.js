@@ -116,9 +116,9 @@
                         // The div id will look somethign like piDiv1123
                         var index = parseInt(div.id.substring(5));
 
-                        // data[7] is the email address - this is passed into the nameCtrl object to watch status 
+                        // data[8] is the email address - this is passed into the nameCtrl object to watch status 
                         // changes for that email address.
-                        var email = msg.d[index][7];
+                        var email = msg.d[index][8];
                         nameCtrl.GetStatus(email, div.id);
 
                         if (div) {
@@ -159,7 +159,7 @@
                     ],
                     deferRender: true,
                     data: msg.d,
-                    // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, mobile, mail
+                    // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, groupNumber, mobile, mail
                     columns: [
                         {
                             title: "Name",
@@ -174,6 +174,7 @@
                         { title: "Department" },
                         { title: "Location" },
                         { title: "Telephone" },
+                        { title: "Dept Number" },
                         { title: "Mobile", visible: true },
                         { title: "Email", visible: true }
                     ],
@@ -213,7 +214,7 @@
             // Hide columns
             //table.columns([2, 6, 7]).visible(false, false); //Manager, Mobile, Email
             //table.columns([3, 6, 7]).visible(false, false); //Department, Mobile, Email
-            table.columns([6, 7]).visible(false, false); //Mobile, Email
+            table.columns([2, 7, 8]).visible(false, false); //Manager, Mobile, Email
             table.columns.adjust().draw(false); // adjust column sizing and redraw
             
             // Filter event handler

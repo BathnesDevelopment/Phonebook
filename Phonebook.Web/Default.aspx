@@ -77,6 +77,7 @@
                             <th rowspan="1" colspan="1"><input type="text"></th>                           
                             <th rowspan="1" colspan="1"><input type="text"></th>
                             <th rowspan="1" colspan="1"><input type="text"></th>                            
+            <th rowspan="1" colspan="1"><input type="text"></th>       
 					</tr></tfoot></table>
 
             <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
@@ -107,6 +108,10 @@
                             <tr>
                             <td>Telephone:  </td>
                             <td><asp:TextBox ID="txtTelephone" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                            <td>Dept Number:  </td>
+                            <td><asp:TextBox ID="txtGroupNumber" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
                             </tr>
                             <tr>
                             <td>Comments:  </td>
