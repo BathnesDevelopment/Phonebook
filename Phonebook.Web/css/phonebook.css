@@ -9,8 +9,9 @@
 tr.grouping {
     text-transform: uppercase;
     font-size: smaller;
+    font-weight: bold;
     text-align: right;
-    background-color: #F9F9F9;
+    /*background-color: #F9F9F9;*/
 }
 
     tr.grouping td {

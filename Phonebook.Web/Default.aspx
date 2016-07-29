@@ -57,10 +57,11 @@
         <div class="container">
             <h1>#Phonebook</h1>
             <p>B&amp;NES Council phonebook</p>
-			<small>If your phone number is incorrect please contact the IT Helpdesk on 7252</small>
+<%--			<small>If your phone number is incorrect please contact the IT Helpdesk on 7252</small>--%> 
             <p>
-                <a class="btn btn-primary" href="#">User Guide</a>
-                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#videoModal">Movie</a>
+                <a class="btn btn-success" target="_blank" href="phonebook_userguide.pdf">User Guide</a>
+                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#formModal">Request Update</a>
+                <a class="btn btn-success" target="_blank" href="http://intranet/site-codes-and-address-0">Site Codes</a>
             </p>
             <p class="loading">Loading</p>
         </div>
@@ -77,21 +78,56 @@
                             <th rowspan="1" colspan="1"><input type="text"></th>
                             <th rowspan="1" colspan="1"><input type="text"></th>                            
 					</tr></tfoot></table>
-        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+
+            <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close" aria-hidden="true" type="button" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Video title</h4>
+                        <h4 class="modal-title">Phonebook Update Request</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Put the video guide in here.</p>
+                        <p>Use the following form to request updates to the Phonebook</p>
+
+
+                     <form id="frm" runat="server">                   
+                        <table>
+                           <tr>
+                            <td>Name:  </td>
+                            <td><asp:TextBox ID="txtName" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                            <td>Job Title:  </td>
+                            <td><asp:TextBox ID="txtJobTitle" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                            <td>Location:  </td>
+                            <td><asp:TextBox ID="txtLocation" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                            <td>Telephone:  </td>
+                            <td><asp:TextBox ID="txtTelephone" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                            <td>Comments:  </td>
+                            <td><asp:TextBox ID="txtComments" runat="server" Columns="40" TextMode="MultiLine" Font-Size="Small" ></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td><asp:Button Text="Send Request" OnClick="SendEmail" runat="server" /></td>
+                            </tr>
+                         </table>
+                         </form>
+
+
                         <div></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End page content -->
+
+<!-- End page content -->
+
         <footer>
             <div class="row">
                 <div class="col-lg-12">

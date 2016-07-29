@@ -144,18 +144,18 @@
                     processing: true,
                     dom: 'Bfrtip',
                     buttons: [
-                        {
-                            extend: 'print',
-                            text: 'Print',
-                            className: ''
+                    //    {
+                    //        extend: 'print',
+                    //        text: 'Print',
+                    //        className: ''
 
-                        },
-               //         {
-               //             extend: 'excelHtml5',
-               //             text: 'Export Excel',
-               //             className: ''
+                    //    },
+                    //    {
+                    //        extend: 'excelHtml5',
+                    //        text: 'Export Excel',
+                    //        className: ''
 
-//                        }
+                    //    }
                     ],
                     deferRender: true,
                     data: msg.d,
@@ -177,6 +177,7 @@
                         { title: "Mobile", visible: true },
                         { title: "Email", visible: true }
                     ],
+
                     //order: [[ 2, 'asc' ]],
                     order: [[3, 'asc']],
                     drawCallback: function (settings) {
@@ -188,7 +189,7 @@
                             if (group != '' && last !== group) {
                                 $(rows).eq(i).before(
                                     //'<tr class="grouping"><td colspan="5">Manager: ' + group + '</td></tr>'
-                                    '<tr class="grouping"><td colspan="5">Department: ' + group + '</td></tr>'
+                                    '<tr class="grouping"><td colspan="6">Department: ' + group + '</td></tr>'
                                 );
                                 last = group;
                             }
@@ -210,7 +211,9 @@
             // DataTable
             var table = $('#tablePhonebook').DataTable();
             // Hide columns
-            table.columns([2, 6, 7]).visible(false, false); //Manager, Mobile, Email
+            //table.columns([2, 6, 7]).visible(false, false); //Manager, Mobile, Email
+            //table.columns([3, 6, 7]).visible(false, false); //Department, Mobile, Email
+            table.columns([6, 7]).visible(false, false); //Mobile, Email
             table.columns.adjust().draw(false); // adjust column sizing and redraw
             
             // Filter event handler
