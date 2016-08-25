@@ -172,7 +172,7 @@
                         { title: "Job title" },
                         { title: "Manager", visible: true },
                         { title: "Department" },
-                        { title: "Location" },
+                        { title: "Office" },
                         { title: "Telephone" },
                         { title: "Dept Number" },
                         { title: "Mobile", visible: true },

@@ -46,7 +46,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void SendEmail(object sender, EventArgs e)
     {
-        using (MailMessage mm = new MailMessage("phonebook@bathnes.gov.uk", "james_waldron@bathnes.gov.uk"))
+        using (MailMessage mm = new MailMessage("phonebook@bathnes.gov.uk", "it_helpdesk@bathnes.gov.uk"))
         {
             mm.Subject = "Phonebook Update Request";
             mm.Body = "Name: " + txtName.Text + "\n";
