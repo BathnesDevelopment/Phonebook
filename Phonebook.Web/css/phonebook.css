@@ -96,6 +96,7 @@ tr.grouping {
     }
 }
 
+
 /* Matthew Steer added this on: 6.6.16 */
 tfoot input {
     font-size: 13px !important;
@@ -105,4 +106,9 @@ tfoot input {
 }
 ::-ms-clear {
     display: none;
+}
+
+/* 30.8.16 JW */
+.dataTables_filter {
+    text-align: left !important
 }

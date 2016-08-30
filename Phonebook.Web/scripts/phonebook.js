@@ -139,11 +139,11 @@
                 .on('init.dt', function () {
                     attachToSkype();
                 })
-                .DataTable(
-                {
+                .DataTable( 
+                {                    
                     processing: true,
                     dom: 'Bfrtip',
-                    buttons: [
+                    //buttons: [
                     //    {
                     //        extend: 'print',
                     //        text: 'Print',
@@ -156,7 +156,7 @@
                     //        className: ''
 
                     //    }
-                    ],
+                    //],
                     deferRender: true,
                     data: msg.d,
                     // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, groupNumber, mobile, mail
@@ -178,7 +178,7 @@
                         { title: "Mobile", visible: true },
                         { title: "Email", visible: true }
                     ],
-
+                                        
                     //order: [[ 2, 'asc' ]],
                     order: [[3, 'asc']],
                     drawCallback: function (settings) {
@@ -194,21 +194,30 @@
                                 );
                                 last = group;
                             }
-                        });
+                        });                     
+                    },
+                    // Change the serach label to Search Filter
+                    "oLanguage": {
+                        "sSearch": "Search Filter:"
                     }
                 });
 
             $('#tablePhonebook').on('draw.dt', function () {
                 attachToSkype();
+                
+
             });
 
-            
+
+
             // MS - 3.6.16
             // Setup - add a text input to each footer cell            
             $('#tablePhonebook tfoot th').each(function (i) {
                 var title = $('#tablePhonebook thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" placeholder="Search ' + title + '" data-index="' + i + '" style="height: 30px;"/>');
-            });            
+            });
+
+
             // DataTable
             var table = $('#tablePhonebook').DataTable();
             // Hide columns
@@ -224,6 +233,8 @@
                     .search(this.value)
                     .draw();
             });
+                 
         }
     });    
 });
+
