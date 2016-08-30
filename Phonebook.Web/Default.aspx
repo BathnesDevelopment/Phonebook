@@ -103,7 +103,7 @@
                             <td><asp:TextBox ID="txtJobTitle" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
                             </tr>
                             <tr>
-                            <td>Location:  </td>
+                            <td>Office:  </td>
                             <td><asp:TextBox ID="txtLocation" runat="server" Columns="30" Font-Size="Small"></asp:TextBox></td>
                             </tr>
                             <tr>
