@@ -34,8 +34,8 @@ public partial class _Default : System.Web.UI.Page
         {
             while (reader.Read())
             {
-                // We're expecting displayname, (ignore)surname, (ignore)givenname, jobtitle, manager, department, location, telephoneNumber, groupNumber, mobile, mail
-                data.Add(new string[] { reader.GetString(0), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10) });
+                // We're expecting displayname, (ignore)surname, (ignore)givenname, jobtitle, (ignore)manager, department, location, telephoneNumber, groupNumber, mobile, mail
+                data.Add(new string[] { reader.GetString(0), reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10) });
             }
         }
         sqlConnection.Close();

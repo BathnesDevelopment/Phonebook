@@ -116,9 +116,9 @@
                         // The div id will look somethign like piDiv1123
                         var index = parseInt(div.id.substring(5));
 
-                        // data[8] is the email address - this is passed into the nameCtrl object to watch status 
+                        // data[7] is the email address - this is passed into the nameCtrl object to watch status 
                         // changes for that email address.
-                        var email = msg.d[index][8];
+                        var email = msg.d[index][7];
                         nameCtrl.GetStatus(email, div.id);
 
                         if (div) {
@@ -159,7 +159,7 @@
                     //],
                     deferRender: true,
                     data: msg.d,
-                    // We're expecting displayname, surname, givenname, jobtitle, manager, department, location, telephoneNumber, groupNumber, mobile, mail
+                    // We're expecting displayname, surname, givenname, jobtitle, department, location, telephoneNumber, groupNumber, mobile, mail
                     columns: [
                         {
                             title: "Name",
@@ -170,7 +170,7 @@
                         //{ title: "Surname" },
                         //{ title: "Given name" },
                         { title: "Job title" },
-                        { title: "Manager", visible: true },
+                        //{ title: "Manager", visible: true },
                         { title: "Department" },
                         { title: "Office" },
                         { title: "Telephone" },
@@ -179,14 +179,13 @@
                         { title: "Email", visible: true }
                     ],
                                         
-                    //order: [[ 2, 'asc' ]],
-                    order: [[3, 'asc']],
+                    order: [[2, 'asc']],
                     drawCallback: function (settings) {
                         var api = this.api();
                         var rows = api.rows({ page: 'current' }).nodes();
                         var last = null;
                         //api.column(2, { page: 'current' }).data().each(function (group, i) {
-                        api.column(3, { page: 'current' }).data().each(function (group, i) {
+                        api.column(2, { page: 'current' }).data().each(function (group, i) {
                             if (group != '' && last !== group) {
                                 $(rows).eq(i).before(
                                     //'<tr class="grouping"><td colspan="5">Manager: ' + group + '</td></tr>'
@@ -223,7 +222,7 @@
             // Hide columns
             //table.columns([2, 6, 7]).visible(false, false); //Manager, Mobile, Email
             //table.columns([3, 6, 7]).visible(false, false); //Department, Mobile, Email
-            table.columns([2, 7, 8]).visible(false, false); //Manager, Mobile, Email
+            table.columns([6, 7]).visible(false, false); //Mobile, Email
             table.columns.adjust().draw(false); // adjust column sizing and redraw
             
             // Filter event handler
