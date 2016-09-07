@@ -62,6 +62,7 @@
                 <a class="btn btn-success" target="_blank" href="phonebook_userguide.pdf">User Guide</a>
                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#formModal">Request Update</a>
                 <a class="btn btn-success" target="_blank" href="http://intranet/site-codes-and-address-0">Site Codes</a>
+                                
             </p>
             <p class="loading">Loading</p>
         </div>
@@ -131,19 +132,33 @@
                 </div>
             </div>
         </div>
+</div>
+    <!-- Option Jumbotron - remove if not wanted. -->
+    <div class="jumbotronfooter">
+        <div class="container">
+            
+                <a class="btn btn-primary" target="_blank" href="http://democracy.bathnes.gov.uk/mgMemberIndex.aspx?FN=ALPHA&VW=LIST&PIC=0">Councillors Contact Details</a>
+                <a class="btn btn-primary" target="_blank" href="http://www.bathnes.gov.uk/services/schools-colleges-and-learning/find-school">School Contact Details</a>
+                <a class="btn btn-primary" target="_blank" href="http://intranet/sites/default/files/SiteFiles/CIS/phones/Mitel-5330-Quick-Ref-Guide.pdf">Mitel 5330e IP Phone Quick Ref Guide</a>
+            
+        </div>
+    </div>
+    <!-- End optional Jumbotron-->
 
 <!-- End page content -->
 
         <footer>
+            <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-unstyled">
                         <li class="pull-right"><a href="#top">Back to top</a></li>
                     </ul>
                 </div>
+                </div>
             </div>
         </footer>
-    </div>
+    
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.0/jszip.min.js" type="text/javascript"></script>
