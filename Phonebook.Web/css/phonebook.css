@@ -58,6 +58,10 @@ tr.grouping {
     border-left: 3px solid #D00E0D;
 }
 
+.status-inameeting {
+    border-left: 3px solid #D00E0D;
+}
+
 .status-donotdisturb {
     border-left: 3px solid #C72D25;
 }

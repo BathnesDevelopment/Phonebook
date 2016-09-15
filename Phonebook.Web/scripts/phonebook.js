@@ -45,6 +45,7 @@
                 div.classList.remove("status-offline");
                 div.classList.remove("status-away");
                 div.classList.remove("status-inacall");
+                div.classList.remove("status-inameeting");
                 div.classList.remove("status-outofoffice");
                 div.classList.remove("status-busy");
                 div.classList.remove("status-donotdisturb");
@@ -72,6 +73,9 @@
                         break;
                     case 6:
                     case 7:
+                        //inameeting
+                        document.getElementById(id).classList.add('status-inameeting');
+                        break;
                     case 8:
                         document.getElementById(id).classList.add('status-outofoffice');
                         break;
