@@ -51,11 +51,12 @@ public partial class _Default : System.Web.UI.Page
             mm.Subject = "Phonebook Update Request";
             mm.Body = "Name: " + txtName.Text + "\n";
             mm.Body += "Job Title: " + txtJobTitle.Text + "\n";
+            mm.Body += "Department: " + txtDept.Text + "\n";
             mm.Body += "Location: " + txtLocation.Text + "\n";
             mm.Body += "Telephone: " + txtTelephone.Text + "\n";
             mm.Body += "Dept Number: " + txtGroupNumber.Text + "\n";
             mm.Body += "Comments: " + txtComments.Text + "\n";
-            mm.Body += "-----------" + "\n";
+            mm.Body += "-------------------" + "\n";
             mm.Body += "Submitted At: " + DateTime.Now + "\n";
             mm.Body += "Submitter Username: " + Environment.UserName + "\n";
             mm.Body += "Submitter Machine: " + Environment.MachineName;
