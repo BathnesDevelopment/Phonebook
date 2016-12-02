@@ -146,7 +146,14 @@
                 .DataTable( 
                 {                    
                     processing: true,
+                    caseSensitive: false,
                     dom: 'Bfrtip',
+
+                    select: {
+                        items: 'cells',
+                       // info: false
+                    },
+
                     //buttons: [
                     //    {
                     //        extend: 'print',
@@ -182,15 +189,21 @@
                         { title: "Mobile", visible: true },
                         { title: "Email", visible: true }
                     ],
-                                        
-                    order: [[2, 'asc']],
+                        
+                    order: [[0, 'asc']],                   
+                    /**
+                    
+                    JW - Removed the grouping by dept as no longer required
+
                     drawCallback: function (settings) {
                         var api = this.api();
                         var rows = api.rows({ page: 'current' }).nodes();
                         var last = null;
+                        
+                                                   
                         //api.column(2, { page: 'current' }).data().each(function (group, i) {
                         api.column(2, { page: 'current' }).data().each(function (group, i) {
-                            if (group != '' && last !== group) {
+                           if (group != '' && last !== group) {                                
                                 $(rows).eq(i).before(
                                     //'<tr class="grouping"><td colspan="5">Manager: ' + group + '</td></tr>'
                                     '<tr class="grouping"><td colspan="6">Department: ' + group + '</td></tr>'
@@ -199,27 +212,26 @@
                             }
                         });                     
                     },
+**/
+
                     // Change the serach label to Search Filter
                     "oLanguage": {
                         "sSearch": "Search Filter:"
                     }
-                });
 
+                });
+                      
             $('#tablePhonebook').on('draw.dt', function () {
                 attachToSkype();
-                
 
             });
-
-
 
             // MS - 3.6.16
             // Setup - add a text input to each footer cell            
             $('#tablePhonebook tfoot th').each(function (i) {
                 var title = $('#tablePhonebook thead th').eq($(this).index()).text();
-                $(this).html('<input type="text" placeholder="Search ' + title + '" data-index="' + i + '" style="height: 30px;"/>');
+                $(this).html('<input type="text" placeholder="Filter ' + title + '" data-index="' + i + '" style="height: 30px;"/>');
             });
-
 
             // DataTable
             var table = $('#tablePhonebook').DataTable();
@@ -229,7 +241,58 @@
             table.columns([6, 7]).visible(false, false); //Mobile, Email
             table.columns.adjust().draw(false); // adjust column sizing and redraw
             
+            //JW - Added the ability to click on a cell which results in a filter being applied to that column only based on the contents of the cell.
+ 
+            $('#tablePhonebook tbody').on('click', 'td', function () {
+              
+                table
+                    .search("");
+
+                var data = table.cell(this).data();
+                var col = table.column($(this).index());
+                var title = $('#tablePhonebook thead th').eq($(this).index()).text();
+
+                var foot = document.getElementsByTagName("tfoot")[0];
+                foot.getElementsByTagName("th")[col[0]].innerHTML = '<input type="text" placeholder="Filter ' + title + '" data-index="' + col[0] + '" value="' + data + '"></input';
+
+                table
+                    .column($(this).index() + ':visIdx')
+                    .search('"' + data + '"')
+                    .draw();
+                                
+            });
+
+            //JW - Button added that will clear all filters and re-draw the table
+ 
+            $('#clearFilterBtn').on('click', function () {
+                
+                var head = document.getElementsByTagName("thead")[0];
+                var foot = document.getElementsByTagName("tfoot")[0];
+
+                for (i = 0; i < 6; i++) {
+                    var headValue = head.getElementsByTagName("th")[i];
+                    foot.getElementsByTagName("th")[i].innerHTML = '<input type="text" placeholder="Filter ' + headValue.outerText + '" data-index="' + i + '" value=""></input>';
+                    
+                    table
+                        .column($(headValue).index() + ':visIdx')
+                        .search("")
+                }
+
+                table
+                    .draw()
+                    .search("");
+            });
+            
+
+            //JW - Added the ability to click on a cell which results in a filter being applied to the entire table based on the contents of the cell.
+            //$('#tablePhonebook tbody').on('click', 'td', function () {
+            //    table
+            //        .search(table.cell(this).data())
+            //        .draw();
+            //});
+
             // Filter event handler
+
             $(table.table().container()).on('keyup', 'tfoot input', function () {
                 table
                     .column($(this).data('index'))
