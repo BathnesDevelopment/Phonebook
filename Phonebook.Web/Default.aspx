@@ -17,6 +17,8 @@
     <link href="css/phonebook.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/t/bs/dt-1.10.11/datatables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css" rel="stylesheet">
+   
 </head>
 <body>
     <div class="container">
@@ -69,17 +71,23 @@
     <!-- End optional Jumbotron-->
     <div class="container">
         <!-- Page content goes in here -->
-        
-        <table class="table" id="tablePhonebook"><tfoot><tr>
-                            <!-- Matthew Steer added this on 6.6.16 -->
-                            <th rowspan="1" colspan="1"><input type="text"></th>
-                            <th rowspan="1" colspan="1"><input type="text"></th>
-                            <th rowspan="1" colspan="1"><input type="text"></th> 
-                            <th rowspan="1" colspan="1"><input type="text"></th>                           
-                            <th rowspan="1" colspan="1"><input type="text"></th>
-                            <th rowspan="1" colspan="1"><input type="text"></th>                            
-                            <th rowspan="1" colspan="1"><input type="text"></th>       
-					</tr></tfoot></table>
+
+        <a class="btn btn-primary" id="clearFilterBtn">Reset Filters</a>
+
+        <table class="table" id="tablePhonebook">
+            <tfoot>
+                <tr>
+                    <!-- Matthew Steer added this on 6.6.16 -->
+                    <th rowspan="1" colspan="1"><input type="text"></th>
+                    <th rowspan="1" colspan="1"><input type="text"></th>
+                    <th rowspan="1" colspan="1"><input type="text"></th> 
+                    <th rowspan="1" colspan="1"><input type="text"></th>                           
+                    <th rowspan="1" colspan="1"><input type="text"></th>
+                    <th rowspan="1" colspan="1"><input type="text"></th>                            
+                    <th rowspan="1" colspan="1"><input type="text"></th>
+                </tr>
+             </tfoot>
+        </table>
         
                     <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
             <div class="modal-dialog">
@@ -153,6 +161,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.0/jszip.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/t/bs/dt-1.10.11/datatables.min.js" type="text/javascript"></script>
     <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js" type="text/javascript"></script>
 <!--<script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js" type="text/javascript"></script>-->
 <!--<script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.bootstrap.min.js" type="text/javascript"></script>-->
 <!--<script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js" type="text/javascript"></script>-->

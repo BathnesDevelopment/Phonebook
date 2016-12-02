@@ -23,6 +23,8 @@ tr.grouping {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
     .jumbotron .container h1::first-letter {
@@ -115,4 +117,20 @@ tfoot input {
 /* 30.8.16 JW */
 .dataTables_filter {
     text-align: left !important
+}
+
+td {
+    cursor: pointer !important;
+}
+
+td:hover {
+    background-color:#f9f9f9 !important;
+}
+
+th input {
+    height: 30px;
+}
+
+#clearFilterBtn {
+    float: right;
 }
