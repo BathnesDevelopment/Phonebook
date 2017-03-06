@@ -254,7 +254,7 @@
 
                 var foot = document.getElementsByTagName("tfoot")[0];
                 foot.getElementsByTagName("th")[col[0]].innerHTML = '<input type="text" placeholder="Filter ' + title + '" data-index="' + col[0] + '" value="' + data + '"></input';
-
+                
                 table
                     .column($(this).index() + ':visIdx')
                     .search('"' + data + '"')
@@ -282,7 +282,7 @@
                     .draw()
                     .search("");
             });
-            
+
 
             //JW - Added the ability to click on a cell which results in a filter being applied to the entire table based on the contents of the cell.
             //$('#tablePhonebook tbody').on('click', 'td', function () {

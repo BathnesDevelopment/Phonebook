@@ -18,6 +18,7 @@
     <link href="https://cdn.datatables.net/t/bs/dt-1.10.11/datatables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
    
 </head>
 <body>
@@ -64,6 +65,7 @@
                 <a class="btn btn-success" target="_blank" href="phonebook_userguide.pdf">User Guide</a>
                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#formModal">Request Update</a>
                 <a class="btn btn-success" target="_blank" href="http://intranet/site-codes-and-address-0">Site Codes</a>
+                <a class="btn btn-success" target="_blank" href="http://intranet/top-tips-telephone">Telephone Tips</a>
             </p>
             <p class="loading">Loading</p>
         </div>

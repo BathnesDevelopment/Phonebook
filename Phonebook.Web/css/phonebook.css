@@ -102,6 +102,12 @@ tr.grouping {
     }
 }
 
+@-moz-keyframes ellipsis {
+    to {
+        width: 20px;
+    }
+}
+
 
 /* Matthew Steer added this on: 6.6.16 */
 tfoot input {
@@ -121,10 +127,14 @@ tfoot input {
 
 td {
     cursor: pointer !important;
+    -webkit-transition:linear 0.2s;
+    -moz-transition:linear 0.2s;
+    transition:linear 0.2s;
+
 }
 
 td:hover {
-    background-color:#f9f9f9 !important;
+    background-color:#e1e1e1 !important;
 }
 
 th input {
